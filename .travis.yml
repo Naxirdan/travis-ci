@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "14.15.1"
+cache: npm
+dist: trusty
+sudo: required
+
+branches:
+  only:
+    - master
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+  - ng lint
+  - npm run test-headless
