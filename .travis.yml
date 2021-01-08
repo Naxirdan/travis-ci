@@ -1,16 +1,16 @@
-language: node_js
+language: node_js # Programming language to install
 node_js:
-  - "14.15.1"
+  - "14.15.1" # Version
 cache: npm
-dist: trusty
+dist: trusty # We will check dist?
 sudo: required
 
-branches:
+branches: # Wich branch need travis execution
   only:
-    - master
+    - master # Branch to execute
 
 before_script:
-  - npm install -g @angular/cli
+  - npm install -g @angular/cli # Command to execute before script
 
 script:
   - ng lint
