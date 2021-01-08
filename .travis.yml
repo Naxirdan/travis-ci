@@ -15,3 +15,12 @@ before_script:
 script:
   - ng lint
   - npm run test-headless
+  - ng build --prod
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/travis-ci
+  on:
+    branch: master
